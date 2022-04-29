@@ -11,10 +11,10 @@ const login = require("./routes/login");
 const app = express();
 app.use(express.json());
 app.use(express.static("public"));
-app.use(cors());
-app.get("/*", function (req, res) {
-  res.sendFile(path.join(_dirname, "public", "index.html"));
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "/", "public", "index.html"));
 });
+app.use(cors());
 app.use("/api/v1", doubts);
 app.use("/api/v1", register);
 app.use("/api/v1", login);
