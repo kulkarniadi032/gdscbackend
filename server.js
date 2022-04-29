@@ -15,7 +15,7 @@ app.use("/api/v1", doubts);
 app.use("/api/v1", register);
 app.use("/api/v1", login);
 app.get("/*", function (req, res) {
-  res.sendFile(path.join(_dirname, "build", "index.html"));
+  res.sendFile(path.join(_dirname, "public", "index.html"));
 });
 app.listen(process.env.PORT, () => {
   console.log("server is running");
