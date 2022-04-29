@@ -10,6 +10,9 @@ const login = require("./routes/login");
 const app = express();
 app.use(express.json());
 app.use(express.static("public"));
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(_dirname, "build", "index.html"));
+});
 app.use(cors());
 app.use("/api/v1", doubts);
 app.use("/api/v1", register);
