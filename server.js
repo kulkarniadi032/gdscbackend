@@ -10,15 +10,15 @@ const register = require("./routes/register");
 const login = require("./routes/login");
 const app = express();
 app.use(express.json());
-app.use(cors());
 app.use(express.static("public"));
+app.use(cors());
 // below route is for after refresh the page that current page will show again
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "/", "public", "index.html"));
-});
 app.use("/api/v1", doubts);
 app.use("/api/v1", register);
 app.use("/api/v1", login);
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "/", "public", "index.html"));
+});
 app.listen(process.env.PORT, () => {
   console.log("server is running");
 });
