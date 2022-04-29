@@ -11,12 +11,12 @@ const app = express();
 app.use(express.json());
 app.use(express.static("public"));
 app.use(cors());
-app.use("/api/v1", doubts);
-app.use("/api/v1", register);
-app.use("/api/v1", login);
 app.get("/*", function (req, res) {
   res.sendFile(path.join(_dirname, "public", "index.html"));
 });
+app.use("/api/v1", doubts);
+app.use("/api/v1", register);
+app.use("/api/v1", login);
 app.listen(process.env.PORT, () => {
   console.log("server is running");
 });
