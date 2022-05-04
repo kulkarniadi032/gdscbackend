@@ -1,6 +1,6 @@
 var nodemailer = require("nodemailer");
-const res = require("express/lib/response");
-const req = require("express/lib/request");
+// const res = require("express/lib/response");
+// const req = require("express/lib/request");
 // const sendEmail = (
 //   to = "kulkarniadi032@gmail.com",
 //   subject = `Message from GDSC DIEMS regarding your query`,
